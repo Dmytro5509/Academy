@@ -1,0 +1,20 @@
+echo "# jr" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Dmytro5509/jr.git
+git push -u origin main
+
+class Block {
+    constructor(index, previousHash, timestamp, data, hash) {
+        this.index = index;
+        this.previousHash = previousHash.toString();
+        this.timestamp = timestamp;
+        this.data = data;
+        this.hash = hash.toString();
+    }
+}
+var calculateHash = (index, previousHash, timestamp, data) => {
+    return CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
+};
